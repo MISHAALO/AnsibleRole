@@ -1,0 +1,21 @@
+---
+# tasks file for maven
+- name: Ensure mvn package is present
+  yum:
+   name: maven
+   state: present
+
+- name: Git Clone sample app
+  git:
+   repo: 'https://github.com/boxfuse/boxfuse-sample-java-war-hello'
+   dest: /home/mbagdasaryan/del/
+
+- name: Build sample app
+  shell: mvn package chdir="/home/mbagdasaryan/del/"
+
+- name: Transfer file from build to tomcat
+  synchronize:
+   src: /home/mbagdasaryan/del/target/hello-1.0.war
+   dest: /home/mbagdasaryan/role/tomcat/files
+   mode: pull
+  delegate_to: 127.0.0.1

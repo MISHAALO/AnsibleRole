@@ -1,0 +1,11 @@
+---
+# tasks file for common
+- name: install packages
+  yum: name={{item}} state=installed
+  with_items:
+       - tree
+       - htop
+       - mc
+       - git
+
+

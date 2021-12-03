@@ -1,0 +1,11 @@
+---
+# tasks file for tomcat
+- name: Ensure tomcat package is present
+  yum:
+   name: tomcat
+   state: present
+
+
+- name: copy war
+  copy: src=hello-1.0.war dest={{ dest_folder }}/hello-1.0.war
+

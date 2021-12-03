@@ -1,0 +1,5 @@
+---
+# defaults file for tomcat
+dest_folder: /d01/tomcat/webapps/
+
+
