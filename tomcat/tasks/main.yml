@@ -7,5 +7,5 @@
 
 
 - name: copy war
-  copy: src=hello-1.0.war dest={{ dest_folder }}/hello-1.0.war
+  copy: src=/home/mbagdasaryan/artif/hello-1.0.war dest={{ dest_folder }}/hello-1.0.war
 
